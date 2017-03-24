@@ -7,14 +7,13 @@ tags:
 ### 前言
 由于最近做消息中心后台开发，需要进行数据库的操作，在编写SQL（mybatis）上略感吃力，于是复习一下大学时代所学习的数据库的相关基础知识，直接从SQL开始。
      
-### I.```SQL```与```模式```
+### I.SQL与模式
 ![此处输入图片的描述][1]
-
-
   [1]: https://raw.githubusercontent.com/jdqm/hello-world/master/db/Image.png
   
 ### II.本次学习所用到的几个表
 Student
+
 | 学号 Sno | 姓名 Sname  |  性别 Ssex | 年龄 Sage | 所在系 Sdept |
 | :----:   | :----:   | :----:  | :----:  | :----:  |
 | 20021521     | 李勇 |   男    |  20     |  CS     |
