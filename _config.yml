@@ -3,13 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: jdqmBlog
+title: Jdqm Blog
 subtitle: 个人博客
 description: 坚持的人儿
-author: jdqm
+author: 初心
 language: zh-Hans
 timezone:
-avatar: 
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'

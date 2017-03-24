@@ -2,6 +2,10 @@
 title: SQL数据类型、基本表的定义、索引定义
 date: 2017-03-24 10:07:53
 tags:
+	-SQL
+	-数据库
+	-database
+categories: database
 ---
 
 ### 前言
