@@ -15,6 +15,8 @@ categories: database
 ![此处输入图片的描述][1]
   [1]: https://raw.githubusercontent.com/jdqm/hello-world/master/db/Image.png
   
+ <!-- more -->
+  
 ### II.本次学习所用到的几个表
 Student
 

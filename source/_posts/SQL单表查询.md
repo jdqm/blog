@@ -15,7 +15,9 @@ from <表名或试图名> [,<表名或试图名>] ...
 [group by<列名1> [having <条件表达式>]]
 [order by<列名2> [ASC | DESC]];
 ```
-###数据表
+<!-- more -->
+
+### 数据表
 Student
 | 学号 Sno | 姓名 Sname  |  性别 Ssex | 年龄 Sage | 所在系 Sdept |
 | :----:   | :----:   | :----:  | :----:  | :----:  |
