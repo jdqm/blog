@@ -1,9 +1,16 @@
 ---
-title: 第六届蓝桥杯
+title: 第六届蓝桥杯Java B组省赛试题答案
 date: 2015-03-27 20:53:10
 tags:
 	-算法
 	-数据结构
+categories: 数据结构与算法
+---
+
+#
+
+标签（空格分隔）： 未分类
+
 ---
 
 1、三角形面积
@@ -22,7 +29,9 @@ tags:
 8*8-(8*4+6*4+8*2)/2=28
 
 答案：28
+
 <!-- more -->
+
 2、立方变自身
 
 观察下面的现象,某个数字的立方，按位累加仍然等于自身。
@@ -157,7 +166,7 @@ public class Three {
 ```
 注意，只能填写缺少的部分，不要重复抄写已有代码。不要填写任何多余的文字。
 
-将每次求余的到榆树存在Vector中，如果有发现有重复并且不是第0位（第0位有是整数位），这个题目比较简单。
+解题思路：将每次求余的到余数存在Vector中，如果有发现有重复并且不是第0位（第0位有是整数位），这个题目比较简单。
 
 答案：
 ```
@@ -203,6 +212,12 @@ public class A
 ```
 注意，只能填写缺少的部分，不要重复抄写已有代码。不要填写任何多余的文字。
 
+解题思路：这题是排列组合问题，代码中就是对9个数字进行全排列。
+答案：
+```
+{int t=x[k]; x[k]=x[i]; x[i]=t;}
+```
+
 6、加法变乘法
 
 我们都知道：1+2+3+ ... + 49 = 1225
@@ -216,7 +231,80 @@ public class A
 
 注意：需要你提交的是一个整数，不要填写任何多余的内容。
 
+解题思路：这种题目意思很明确，可以借助计算机的强大计算能力进行遍历,需要注意题目中的```不相邻的加号```。
+方法一(逆向)：
 
+```
+package lanqiao;
+
+public class Six {
+
+	public static void main(String[] args) {
+
+		int sum;
+		for (int i = 1; i < 49; i++){
+			for (int j = i+2; j < 49; j++) {
+				sum = 1225;
+				sum -= i+i+1+j+j+1;//减去四个相乘的数
+				sum += i*(i+1)+j*(j+1);
+				if(sum == 2015) {
+					System.out.println("i=" + i + ",j=" + j);
+				}
+			}
+		}
+		
+	}
+
+}
+```
+
+
+方法二(正向)：
+```
+package lanqiao;
+
+public class Six {
+
+	public static void main(String[] args) {
+
+		int sum = 0;
+		// 总共有48个加号，符号的下标即为左边的数字
+		for (int i = 1; i < 49; i++) {
+			// 乘号之间至少间距2
+			for (int j = i + 2; j < 49; j++) {
+				sum = 0;
+				for (int k = 1; k < 50; k++) {
+					if (i == k || j == k) {
+						sum += k * (k + 1);
+						k++;//两个数相乘，要略过for循环一次
+					} else {
+						sum += k;
+					}
+				}
+				if (sum == 2015) {
+					System.out.println("i=" + i + ",j=" + j);
+				}
+			}
+		}
+	}
+
+}
+
+```
+打印结果
+```
+i=10,j=27
+i=16,j=24
+```
+即
+```
+1+2+3+...+10*11+12+...+27*28+29+...+49 = 2015
+1+2+3+...+16*17+18+...+24*25+26+...+49 = 2015
+```
+答案：
+```
+16
+```
 7、牌型种数
 
 小明被劫持到X赌城，被迫与其他3人玩牌。
@@ -226,6 +314,30 @@ public class A
 
 请填写该整数，不要填写任何多余的内容或说明文字。
 
+解题思路：动态规划
+
+```
+package lanqiao;
+
+public class Seven {
+
+	public static void main(String[] args) {
+		int[][] dp = new int[14][14];
+		dp[0][0] = 1;
+		for (int i = 1; i < 14; i++)
+			for (int j = 0; j < 14; j++)
+				for (int k = 0; k < 5; k++)
+					if (j + k <= 13)
+						dp[i][j + k] += dp[i - 1][j];
+		System.out.println(dp[13][13]);
+	}
+}
+
+```
+答案：
+```
+3598180
+```
 
 8、饮料换购
 
@@ -252,12 +364,40 @@ public class A
 峰值内存消耗（含虚拟机） < 256M
 CPU消耗  < 1000ms
 
+答案：
 
 请严格按要求输出，不要画蛇添足地打印类似：“请您输入...” 的多余内容。
 
 所有代码放在同一个源文件中，调试通过后，拷贝提交该源码。
 注意：不要使用package语句。不要使用jdk1.7及以上版本的特性。
 注意：主类的名字必须是：Main，否则按无效代码处理。
+
+解题思路：这道题目逻辑比较清晰简单，但是需要注意这个输入整数的范围，比如是用int 还是long，否则会因为有些测试用例超出了该数据类型所能表示的范围而发生异常，一般比赛里面都会有10个左右的测试用例，每个测试用例对应一定的分数，另外比赛类的题目一定要严格按照指定格式输出，否则就白做了。在比赛中一般是使用黑盒自动化测试。
+
+```
+import java.util.Scanner;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		long sum = 0;
+		Scanner sc = new Scanner(System.in);
+		long n = sc.nextLong();
+		sum += n;
+		while(n >= 3) {
+			long n2 = n / 3;
+			sum += n2;
+			n = n2 + n % 3;//目前拥有的瓶盖 = 换来的饮料+剩余的瓶盖（不是3的别倍数的时候会有）
+		}
+		
+		System.out.println(sum);
+	}
+
+}
+
+
+```
+
 
 9、垒骰子
 
@@ -301,6 +441,57 @@ CPU消耗  < 2000ms
 所有代码放在同一个源文件中，调试通过后，拷贝提交该源码。
 注意：不要使用package语句。不要使用jdk1.7及以上版本的特性。
 注意：主类的名字必须是：Main，否则按无效代码处理。
+
+解题思路：递推,还得用矩阵加速吧
+```
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+	static int MOD = (int) (1e9 + 7);
+
+	public static void main(String[] args) {
+		int[][] ar = new int[40][40];
+		int[] mm = { 0, 4, 5, 6, 1, 2, 3 };
+		long[][] dp = new long[2][7];
+		Scanner in = new Scanner(System.in);
+		int n = in.nextInt();
+		int m = in.nextInt();
+		for (int i = 0; i < m; i++) {
+			int u = in.nextInt();
+			int v = in.nextInt();
+			ar[u][v] = 1;
+			ar[v][u] = 1;
+		}
+
+		int pre = 1;
+		int now = 0;
+		for (int i = 1; i < 7; i++)
+			dp[0][i] = 4;
+		for (int i = 2; i <= n; i++) {
+			pre = (pre + 1) % 2;
+			now = (now + 1) % 2;
+			Arrays.fill(dp[now], 0);
+			for (int j = 1; j < 7; j++)
+				for (int k = 1; k < 7; k++) {
+					dp[now][j] += (dp[pre][k] * 4) % MOD;
+				}
+			for (int j = 0; j < 7; j++) {
+				for (int k = 0; k <= j; k++)
+					if (ar[j][k] == 1) {
+						dp[now][mm[j]] = (MOD + dp[now][mm[j]] - dp[pre][k] * 4) % MOD;
+						dp[now][mm[k]] = (MOD + dp[now][mm[k]] - dp[pre][j] * 4) % MOD;
+					}
+			}
+		}
+		long ans = 0;
+		for (int i = 1; i < 7; i++)
+			ans = (ans + dp[now][i]) % MOD;
+		System.out.println(ans);
+
+	}
+}
+```
 
 10、生命之树
 
@@ -348,7 +539,106 @@ CPU消耗  < 3000ms
 注意：不要使用package语句。不要使用jdk1.7及以上版本的特性。
 注意：主类的名字必须是：Main，否则按无效代码处理。
 
+解题思路：LAC问题
 
+```
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+	static int[] head1 = new int[100010];
+	static int[] head2 = new int[100010];
+	static int[] node = new int[100010];
+	static Edge[] edge1 = new Edge[300010];
+	static Edge[] edge2 = new Edge[300010];
+	static int[] degree = new int[100010];
+	static int[] fa = new int[100010];
+	static int tot1 = 0, tot2 = 0;
+	static int Node;
+	static long[] max = new long[100010];
+	static long ans = Long.MIN_VALUE;
+
+	static void add1(int u, int v) {
+		edge1[tot1].u = u;
+		edge1[tot1].v = v;
+		edge1[tot1].nxt = head1[u];
+		head1[u] = tot1++;
+	}
+
+	static void add2(int u, int v) {
+		edge2[tot2].u = u;
+		edge2[tot2].v = v;
+		edge2[tot2].nxt = head2[u];
+		head2[u] = tot2++;
+	}
+
+	static void dfs(int u, int par, long nn) {
+		max[u] = nn;
+		fa[u] = u;
+		for (int i = head1[u]; i != -1; i = edge1[i].nxt) {
+			int v = edge1[i].v;
+			if (v == par)
+				continue;
+			dfs(v, u, nn + node[v]);
+			fa[v] = u;
+		}
+		for (int i = head2[u]; i != -1; i = edge2[i].nxt) {
+			int v = edge2[i].v;
+			if (max[v] != Long.MAX_VALUE) {
+				ans = Math.max(ans, max[v] + max[u] - max[parent(v)]);
+			}
+		}
+	}
+
+	static int parent(int x) {
+		if (fa[x] == -1 || fa[x] == x)
+			return x;
+		return fa[x] = parent(fa[x]);
+	}
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		Node = in.nextInt();
+		for (int i = 0; i < Node; i++)
+			node[i] = in.nextInt();
+		for (int i = 0; i <= Node + Node; i++)
+			edge1[i] = new Edge();
+		for (int i = 0; i <= Node * Node * 2; i++)
+			edge2[i] = new Edge();
+		Arrays.fill(fa, -1);
+		Arrays.fill(head1, -1);
+		Arrays.fill(head2, -1);
+		Arrays.fill(max, Long.MAX_VALUE);
+		for (int i = 1; i < Node; i++) {
+			int u, v;
+			u = in.nextInt() - 1;
+			v = in.nextInt() - 1;
+			degree[u]++;
+			degree[v]++;
+			add1(u, v);
+			add1(v, u);
+		}
+		for (int i = 0; i < Node; i++)
+			for (int j = 0; j < Node; j++) {
+				add2(i, j);
+				add2(j, i);
+			}
+		if (Node == 2) {
+			System.out.println(node[0] + node[1]);
+			return;
+		}
+		dfs(0, -1, node[0]);
+		System.out.println(ans);
+	}
+}
+
+class Edge {
+	int u, v, nxt;
+	int par;
+}
+```
+
+总体来看，省赛的题目相对来说是比较简单，如愿获得省一等奖，5月份去帝都参加决赛。另外，看起来奖项很多的样子，如果没有什么特别出色的技能，也可以给简历增加一点东西。
 
 
   [1]: https://raw.githubusercontent.com/jdqm/hello-world/master/lanqiao6/1.jpg
