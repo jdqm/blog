@@ -11,7 +11,7 @@ categories:
 
 #### 工作原理
 Hander被创建后，通过Handler的post方法将一个Runable投递到Handler内部的Looper中去处理，或者通过Handler的send方法发送一个消息到Handler内部的Looper中处理，其中post方法最终也是通过send方法实现的。具体的过程是：当Handler的send方法被调用发出一个消息，MessageQueue就会将这个消息插入消息队列中，Looper发现有新的消息（MessageQueue的next方法），就会处理这个消息。最终这个消息的Runable或者Handler的handleMessage方法就会被调用。Looper是运行在创建Handler的线程中，这样一来Handler中的业务逻辑就会切换到创建Handler的线程中。
-
+<!-- more -->
 
 #### 1、ThreadLocal
  >ThreadLocal是线程内部的数据存储类，可以通过它在指定的线程中存储数据，数据存储后，只能指定的线程能访问，别的线程都不能访问。应用场景：
