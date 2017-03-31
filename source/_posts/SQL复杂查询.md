@@ -4,6 +4,7 @@ date: 2017-03-30 16:52:18
 tags:
 	-数据库
 	-SQL
+categories: database
 ---
 
 PS:本文中数据库表请参考上一篇文章 http://blog.csdn.net/jdqm2014/article/details/64921344
