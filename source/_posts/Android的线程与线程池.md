@@ -17,7 +17,13 @@ categories: Android
 
 ## III. AsyncTask
 
-AsyncTask是一个抽象泛型类，```public abstract class AsyncTask<Params, Progress, Result>```，这三个参数中的Params是执行异步任务传入的参数类型，Progress是异步任务需要向外发出的进度值得类型，即publishProgress方法的参数类型，Result是doInbackground方法的返回值类型。下面是一个例子：
+AsyncTask是一个抽象泛型类，
+```
+public abstract class AsyncTask<Params, Progress, Result>
+```
+
+这三个参数中的Params是执行异步任务传入的参数类型，Progress是异步任务需要向外发出的进度值得类型，即publishProgress方法的参数类型，Result是doInbackground方法的返回值类型。下面是一个例子：
+
 ```
 new MyAsyncTask("task1").execute("param1");
 new MyAsyncTask("task1").execute("param1", "param2");
@@ -240,7 +246,7 @@ private final class ServiceHandler extends Handler {
     }
 }
 ```
-当消息到达handleMessage会继续掉onHandleIntent方法，当这个onHandleIntent方法执行结束，会调```stopSelf(int startId)```方法来停止服务,如果目前后多个后台任务，那么当onHandleIntent执行完最后一个任务时，```stopSelf(int startId)```才会直接停止服务。
+当消息到达handleMessage会继续掉onHandleIntent方法，当这个onHandleIntent方法执行结束，会调stopSelf(int startId)方法来停止服务,如果目前后多个后台任务，那么当onHandleIntent执行完最后一个任务时，stopSelf(int startId)才会直接停止服务。
 ```
 @WorkerThread
 protected abstract void onHandleIntent(@Nullable Intent intent);
@@ -273,11 +279,20 @@ public class LocalIntentService extends IntentService {
     }
 }
 ```
-别忘了这是个Service，必须要在清单文件```<application>.....</application>```里面注册的。
-```<service android:name=".LocalIntentService"/>```
+别忘了这是个Service，必须要在清单文件
+```
+<application>.....</application>
+```
+
+里面注册的。
+
+```
+<service android:name=".LocalIntentService"/>
+```
 
 执行如下代码
 ```
+
 Intent intent = new Intent(this, LocalIntentService.class);
 intent.putExtra("action","task1");
 startService(intent);
@@ -302,6 +317,7 @@ startService(intent);
 
 2）ThreadPoolExecutor
 android中的线程池概念来源于java中的Executor，而Executor是一个接口，真正线程池的实现 是ThreadPoolExecutor，Android下的线程池主要分为4类，都是直接或间接配置ThreadPoolExecutor来实现的，看看ThreadPoolExecutor构造方法的参数：
+
 ```
 public ThreadPoolExecutor(int corePoolSize,
                           int maximumPoolSize,
@@ -310,7 +326,8 @@ public ThreadPoolExecutor(int corePoolSize,
                           BlockingQueue<Runnable> workQueue,
                           ThreadFactory threadFactory) {}
                           
-```   
+```
+
 ①corePoolSize：线程池的核心线程数，默认情况下，核心线程在线程池中是一直存活的，即使它们处于空闲的状态。如果将ThreadPoolExecutor的allowCoreThreadTimeOut设置为ture，那空闲的核心线程在等待任务的过程中就会有超时策略，时间有keepAliveTime参数所指定，当等待时间超过keepAliveTime所指定的时间后，核心线程就会被终止；
 
 ②maximumPoolSize：线程池所能容纳的最大线程数，包括核心和非核心线程，当活动线程到达最大值，后续的任务就会被阻塞；
