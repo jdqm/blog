@@ -243,15 +243,19 @@ post_wordcount:
 wechat_subscriber:
   enabled: true
   qcode: /uploads/wechat-qcode.jpg
-  description: 欢迎您扫一扫上面的微信公众号，订阅我的博客！
+  description: 欢迎关注Jdqm Blog公众号，第一时间接收原创技术沉淀干货。
 
 # Declare license on posts
 post_copyright:
-  enable: false
+  enable: true
   license: CC BY-NC-SA 3.0
   license_url: https://creativecommons.org/licenses/by-nc-sa/3.0/
 
 
+  
+#reward_comment: 您的支持将鼓励我继续创作！
+wechatpay: /uploads/wechat-reward.png
+#alipay: /uploads/wechat-qcode.jpg
 
 # ---------------------------------------------------------------
 # Misc Theme Settings
@@ -406,9 +410,9 @@ busuanzi_count:
   site_uv_header: <i class="fa fa-user"></i>
   site_uv_footer:
   # custom pv span for the whole site
-  site_pv: false
-  site_pv_header: <i class="fa fa-eye"></i>
-  site_pv_footer:
+  site_pv: true
+  site_pv_header: 您是本站的
+  site_pv_footer: 访客
   # custom pv span for one page only
   page_pv: true
   page_pv_header: <i class="fa fa-eye"></i>
