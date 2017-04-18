@@ -32,7 +32,9 @@ _name / __name / $Object / name_ / name$ / Object$
 DaZhePromotion [打折] / getPingfenByName() [评分] / int 变量 = 3;
 ```
 正例: 
-```ali / alibaba / taobao / cainiao / aliyun / youku / hangzhou ```
+```
+ali / alibaba / taobao / cainiao / aliyun / youku / hangzhou 
+```
 等国际通用的名称，可视为英文。
 3 【强制】类名使用 UpperCamelCase 风格，必须遵从驼峰形式，但以下情形例外:(领域模型 的相关命名)DO / DTO / VO / DAO 等。
 正例:
@@ -153,6 +155,7 @@ cache.put(key, value);
 类 B 中:public static final String YES = "y";
 A.YES.equals(B.YES)，预期是 true，但实际返回为 false，导致产生线上问题。 
 ```
+
 - 3) 子工程内部共享常量:即在当前子工程的 const 目录下。
 - 4) 包内共享常量:即在当前包下单独的 const 目录下。
 - 5) 类内共享常量:直接在类内部 private static final 定义。
