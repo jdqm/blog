@@ -1,5 +1,5 @@
 
-Personnel Blog：http://blog.shengyang.me Wellcome to access.
+Personal Blog：http://blog.shengyang.me
 
 
 note:
