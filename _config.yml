@@ -5,14 +5,14 @@
 # Site
 title: Jdqm Blog
 subtitle: 个人博客
-description: 记录平凡的脚步
+description: I promise you.
 author: Jdqm
 language: zh-Hans
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://blog.shengyang.me
+url: https://jdqm.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
