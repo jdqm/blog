@@ -6,9 +6,9 @@ tags:
     -自定义View
 categories: Android
 ---
-HenCoder最近在搞一个仿写活动，[活动地址 http://hencoder.com/activity-mock-1/][1]，之前关注过他写的关于绘制系列的文章，今天就拿这个来练练手，我选择模仿的是荷健康的滑动卷尺效果。
+HenCoder最近在搞一个仿写活动，[活动地址 http://hencoder.com/activity-mock-1/][1]，之前关注过他写的关于绘制系列的文章，今天就拿这个来练练手，我选择模仿的是薄荷健康的滑动卷尺效果。
 <!-- more -->
-![荷健康滑动卷](http://upload-images.jianshu.io/upload_images/3631399-28239e8d2b4841f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![薄荷健康滑动卷](http://upload-images.jianshu.io/upload_images/3631399-28239e8d2b4841f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 视觉设计师丢下了一张图，然后就潇洒地去喝茶了...
 
