@@ -93,9 +93,9 @@ scheme: Gemini
 social:
   #LinkLabel: Link 
   GitHub: https://github.com/jdqm
-  微博: http://weibo.com/your-user-name
+  微博: http://weibo.com/九点七秒
 #  豆瓣: http://douban.com/people/your-user-name
-  知乎: http://www.zhihu.com/people/your-user-name
+  知乎: http://www.zhihu.com/people/Jdqm
 #Twitter: https://twitter.com/your-user-name
 	
 # Social Links Icons
@@ -215,7 +215,7 @@ post_wordcount:
 # Wechat Subscriber
 wechat_subscriber:
   enabled: true
-  qcode: /images/wechat-qcode.jpg
+  qcode: /images/wc-qcode.jpg
   description: 欢迎您扫一扫上面的微信公众号，订阅我的博客！
 
 # Reward
