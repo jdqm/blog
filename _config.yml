@@ -104,55 +104,5 @@ theme: next
 deploy:
   type: git
   repo: https://github.com/jdqm/jdqm.github.io.git
+  branch: master
 
-#duoshuo_shortname: jacksgong
-#duoshuo_share: true
-#duoshuo_hotartical: true
-
-# Next theme search configuration
-search:
-  path: search.xml
-  field: post
-  format: html
-  limit: 10000
-
-sort_by: updated
-
-nofollow:
-    enable: true
-    exclude:
-    - jacksgong.com
-    - dreamtobe.cn
-
-uglify:
-  mangle: true
-  output:
-  compress:
-  exclude:
-  - '*.min.js'
-
-html_minifier:
-  enable: true
-  ignore_error: true
-  exclude:
-
-css_minifier:
-  enable: true
-  exclude:
-    - '*.min.css'
-
-js_minifier:
-  enable: true
-  mangle: true
-  output:
-  compress:
-  exclude:
-    - '*.min.js'
-
-image_minifier:
-  enable: false
-  interlaced: true
-  multipass: false
-  optimizationLevel: 1
-  pngquant: true
-  progressive: true
