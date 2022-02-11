@@ -9,7 +9,7 @@ tags:
 categories: JVM
 ---
 
-![2018-05-09](https://upload-images.jianshu.io/upload_images/3631399-037b98e4397e4558.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![2018-05-09](https://raw.githubusercontent.com/jdqm/blog/master/images/jvm2_slogan.jpeg)
 
 # 一、垃圾收集器
 ## 1.如何确定对象已死
